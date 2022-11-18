@@ -27,7 +27,7 @@ func combiningFunction(input: String) {
     case "4":
         deleteScore()
     case "5":
-        print("평점보기")
+        showAverage()
     case "X":
         print("종료")
     default:
@@ -93,6 +93,50 @@ func deleteScore() {
         print("\(input[0]) 학생의 \(input[1]) 과목의 성적이 삭제되었습니다.")
     } else {
         print("\(input[0]) 학생을 찾지 못했습니다.")
+    }
+}
+
+func showAverage() {
+    print("평점을 알고 싶은 학생의 이름을 입력해주세요")
+    
+    let input = readLine()!
+    
+    if input == "" {
+        print("입력이 잘못되었습니다. 다시 확인해주세요.")
+    } else if students[input] != nil {
+        var sum = 0.0
+        
+        students[input]?.forEach {
+            print("\($0.key): \($0.value)")
+            
+            switch $0.value {
+            case "A+":
+                sum += 4.5
+            case "A":
+                sum += 4
+            case "B+":
+                sum += 3.5
+            case "B":
+                sum += 3
+            case "C+":
+                sum += 2.5
+            case "C":
+                sum += 2
+            case "D+":
+                sum += 1.5
+            case "D":
+                sum += 1
+            case "F":
+                sum += 0
+            default:
+                sum = sum
+            }
+        }
+        
+        var average = sum / Double(students[input]!.count)
+        print("평점 : \(average)")
+    } else {
+        print("\(input) 학생을 찾지 못했습니다.")
     }
 }
 
