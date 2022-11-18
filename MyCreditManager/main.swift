@@ -21,7 +21,7 @@ func combiningFunction(input: String) {
     case "1":
         addStudent()
     case "2":
-        print("학생삭제")
+        removeStudent()
     case "3":
         print("성적추가 (변경)")
     case "4":
@@ -47,6 +47,19 @@ func addStudent() {
     } else {
         students[name] = [:]
         print("\(name) 학생을 추가했습니다.")
+    }
+}
+
+func removeStudent() {
+    print("삭제할 학생의 이름을 입력해주세요")
+
+    let name = readLine()!
+
+    if students[name] != nil {
+        students[name] = nil
+        print("\(name) 학생을 삭제하였습니다.")
+    } else {
+        print("\(name) 학생을 찾지 못했습니다.")
     }
 }
 
