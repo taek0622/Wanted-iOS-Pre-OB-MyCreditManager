@@ -29,7 +29,7 @@ func combiningFunction(input: String) {
     case "5":
         showAverage()
     case "X":
-        print("종료")
+        exit()
     default:
         wrongInput()
     }
@@ -138,6 +138,11 @@ func showAverage() {
     } else {
         print("\(input) 학생을 찾지 못했습니다.")
     }
+}
+
+func exit() {
+    print("프로그램을 종료합니다...")
+    exit(0)
 }
 
 func wrongInput() {
