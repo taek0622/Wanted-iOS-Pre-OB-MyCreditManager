@@ -29,7 +29,9 @@ func combiningFunction(input: String) {
     case "X":
         print("종료")
     default:
-        print("메뉴의 잘못된 입력 처리")
+        wrongInput()
     }
 }
+
+func wrongInput() {
 }
