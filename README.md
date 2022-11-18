@@ -1,49 +1,111 @@
-# iOS-Repository-Template
-이 레포지토리는 iOS 프로젝트에 사용하기 위한 템플릿 레포지토리입니다.
+# Wanted-Pre-OB-MyCreditManager
+원티드 프리온보딩 챌린지 iOS과정 성적 관리 프로그램
 
-## 템플릿 사용 방법
+## 프로젝트 이름
 
-아래의 세가지 방법 중 하나를 선택하여 사용하시면 됩니다.
+- MyCreditManager
 
-### 방법 1. Fork해서 사용하기
+## 사용 언어 / 환경
 
-1. 이 Repository를 Fork한다.
-2. [New](https://github.com/new) 버튼을 눌러서 새 Repository를 생성한다.
-3. Repository Template에서 이 Repository Template을 선택한다.
+- Swift
+- Xcode 기본 템플릿 중 [macOS - Command Line Tool]
 
-### 방법 2. Fork 없이 사용하기
+## 프로그램의 메뉴
 
-1. [Use this template](https://github.com/taek0622/iOS-Repository-Template/generate) 버튼을 눌러서 새 Repository를 만든다.
+- 학생추가
+- 학생삭제
+- 성적추가(변경)
+- 성적삭제
+- 평점보기
+- 종료
 
-### 방법 3. Github Template 없이 사용하기 (비추천)
+## 프로그램 동작조건
 
-1. 이 Repository를 클론한다.
+사용자가 종료 메뉴를 선택하기 전까지는 계속해서 사용자의 입력을 받습니다
 
-   `git clone https://github.com/taek0622/iOS-Repository-Template.git`
+메뉴선택을 포함한 모든 입력은 숫자 또는 영문으로 받습니다
 
-2. 숨겨져있는 `.git` 디렉토리를 찾아 삭제한다.
+## 성적별 점수
 
-   `rm -rf .git`
+- A+ (4.5점) / A (4점)
+- B+ (3.5점) / B (3점)
+- C+ (2.5점) / C (2점)
+- D+ (1.5점) / D (1점)
+- F (0점)
 
-3. 새로운 깃 Repository를 생성한다.
+## 평점
 
-   `git init`
+- 각 과목의 점수 총 합 / 과목 수
+- 최대 소수점 2번째 자리까지 출력
+  - 예)
+    - 3.75
+    - 4.1
+    - 2
 
-4. 첫번째 commit을 생성한다.
+## 프로그램 동작모습
 
-   `git commit -a -m "Initial commit"`
-   
-## .gitmessage 사용 방법
+`예시 화면의 굵은 글씨는 콘솔 출력 내용이며, 얇은 글씨는 콘솔을 통한 입력 내용입니다.`
 
-- 프로젝트를 Clone 받은 후 터미널 상에서 프로젝트 경로로 들어가서 아래의 명령어를 사용하여 `.gitmessage` 사용
-```shell
-git config --global commit.template .github/.gitmessage
-```
-- 위의 명령어 실행 후 `git commit`을 할 때는 아래와 같이 사용할 수 있음
-<img width="802" alt="스크린샷 2022-08-07 18 10 05" src="https://user-images.githubusercontent.com/81027256/183284158-9ef715a0-4045-487b-8441-c3b8b2cf7547.png">
-<img width="922" alt="스크린샷 2022-08-07 18 10 14" src="https://user-images.githubusercontent.com/81027256/183284160-229ebf0e-d5f0-4353-8c58-7af44e0b0107.png">
-<img width="922" alt="스크린샷 2022-08-07 18 11 12" src="https://user-images.githubusercontent.com/81027256/183284179-438d0f7b-cbd9-4816-90de-57b1f94f8b2e.png">
-<img width="810" alt="스크린샷 2022-08-07 18 11 22" src="https://user-images.githubusercontent.com/81027256/183284284-d84b54ab-49f9-485d-9531-b1c5a3b5d92e.png">
+### 메뉴의 잘못된 입력 처리
 
-## 사용 가능한 범위
-- Repository Template을 사용했을 때, 복사되는 범위는 현재 프로젝트의 디렉토리 및 구조, 브랜치 등까지 입니다. Issue나 Pull request의 Labels, Wiki, Project, Actions 등은 복사되지 않습니다.
+![메뉴의 잘못된 입력 처리](https://yagomacademy.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F3557df46-110c-4903-bc77-539505015d63%2F_2019-07-20__1.16.25.png?table=block&id=29b2eff1-68fa-4391-8264-a602731d82df&spaceId=431128ec-0482-4966-b5f0-0bed1417e8c6&width=2000&userId=&cache=v2)
+
+
+
+### 학생추가
+
+- 메뉴를 선택한 후에도 잘못 입력한 것이 있으면 처리해 주어야합니다
+- 이미 존재하는 학생은 다시 추가하지 않습니다
+
+![학생추가](https://yagomacademy.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F73442ba1-ac38-4374-8601-8365bf298e81%2F_2019-07-20__1.17.08.png?table=block&id=61dc2f53-507a-459d-8575-de2622f40102&spaceId=431128ec-0482-4966-b5f0-0bed1417e8c6&width=2000&userId=&cache=v2)
+
+
+
+### 학생 삭제
+
+- 메뉴를 선택한 후에도 잘못 입력한 것이 있으면 처리해 주어야합니다
+- 없는 학생은 삭제하지 않습니다
+
+![학생 삭제](https://yagomacademy.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F3ae5ec95-4a3e-47f2-b8af-bfe93aa83632%2F_2019-07-20__1.18.14.png?table=block&id=2a1ce3ab-371b-4dfb-9564-ef6a6388616a&spaceId=431128ec-0482-4966-b5f0-0bed1417e8c6&width=2000&userId=&cache=v2)
+
+
+
+### 성적추가
+
+- 메뉴를 선택한 후에도 잘못 입력한 것이 있으면 처리해 주어야합니다
+- 없는 학생의 성적은 추가하지 않습니다
+
+![성적추가1](https://yagomacademy.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F264e268b-79d5-4ae7-8023-021374ce8453%2F_2019-07-20__1.19.45.png?table=block&id=cb7c7331-603d-460c-b6bb-e272f7c86b78&spaceId=431128ec-0482-4966-b5f0-0bed1417e8c6&width=2000&userId=&cache=v2)
+
+![성적추가2](https://yagomacademy.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F16d3790e-3db3-4e95-8b46-2fe45673ecd0%2F_2019-07-20__1.20.20.png?table=block&id=0ce56c7e-a5cb-4b02-89dc-1e02792ded0d&spaceId=431128ec-0482-4966-b5f0-0bed1417e8c6&width=2000&userId=&cache=v2)
+
+
+
+### 성적삭제
+
+- 메뉴를 선택한 후에도 잘못 입력한 것이 있으면 처리해 주어야합니다
+- 없는 학생의 성적은 삭제하지 않습니다
+
+![성적삭제](https://yagomacademy.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fdd74a254-4ec3-409b-b4aa-b2c9cd567c71%2F_2019-07-20__1.21.10.png?table=block&id=c8f89c2c-fcaa-4137-98e7-387d351f806b&spaceId=431128ec-0482-4966-b5f0-0bed1417e8c6&width=2000&userId=&cache=v2)
+
+
+
+### 평점보기
+
+- 메뉴를 선택한 후에도 잘못 입력한 것이 있으면 처리해 주어야합니다
+- 해당 학생의 과목과 성적을 모두 출력한 후 마지막 줄에 평점을 출력합니다
+- 없는 학생은 평점을 보여주지 않습니다
+
+![평점보기](https://yagomacademy.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fb5e7ecbd-42ca-4b00-98d6-f1d3bc6fe175%2F_2019-07-20__1.23.23.png?table=block&id=17750e49-d591-48d7-8643-802f58a08a9b&spaceId=431128ec-0482-4966-b5f0-0bed1417e8c6&width=2000&userId=&cache=v2)
+
+
+
+### 종료
+
+- 프로그램을 종료합니다
+
+![종료](https://yagomacademy.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F02fa6200-fe84-4967-aae8-518a5f43253f%2F_2019-07-20__1.23.53.png?table=block&id=06106b7a-cfa2-475e-9e18-4e36bdae8568&spaceId=431128ec-0482-4966-b5f0-0bed1417e8c6&width=2000&userId=&cache=v2)
+
+
+
+원본링크: [원티드 프리온보딩 챌린지 iOS과정 사전과제](https://yagomacademy.notion.site/iOS-ba2d0c0bb0b949c896cc28567706e969)
