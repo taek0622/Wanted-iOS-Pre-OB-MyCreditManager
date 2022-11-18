@@ -109,34 +109,38 @@ func showAverage() {
         students[input]?.forEach {
             print("\($0.key): \($0.value)")
             
-            switch $0.value {
-            case "A+":
-                sum += 4.5
-            case "A":
-                sum += 4
-            case "B+":
-                sum += 3.5
-            case "B":
-                sum += 3
-            case "C+":
-                sum += 2.5
-            case "C":
-                sum += 2
-            case "D+":
-                sum += 1.5
-            case "D":
-                sum += 1
-            case "F":
-                sum += 0
-            default:
-                sum = sum
-            }
+            sum += convertScore(score: $0.value)
         }
         
         var average = sum / Double(students[input]!.count)
         print("평점 : \(average)")
     } else {
         print("\(input) 학생을 찾지 못했습니다.")
+    }
+}
+
+func convertScore(score: String) -> Double {
+    switch score {
+    case "A+":
+        return 4.5
+    case "A":
+        return 4
+    case "B+":
+        return 3.5
+    case "B":
+        return 3
+    case "C+":
+        return 2.5
+    case "C":
+        return 2
+    case "D+":
+        return 1.5
+    case "D":
+        return 1
+    case "F":
+        return 0
+    default:
+        return 0
     }
 }
 
