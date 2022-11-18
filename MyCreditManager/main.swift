@@ -25,7 +25,7 @@ func combiningFunction(input: String) {
     case "3":
         updateScore()
     case "4":
-        print("성적삭제")
+        deleteScore()
     case "5":
         print("평점보기")
     case "X":
@@ -77,6 +77,22 @@ func updateScore() {
         print("\(input[0]) 학생의 \(input[1]) 과목이 \(input[2])로 추가(변경)되었습니다.")
     } else {
         print("\(input[0]) 학생의 \(input[1]) 과목이 \(input[2])로 추가(변경)되었습니다.")
+    }
+}
+
+func deleteScore() {
+    print("성적을 삭제할 학생의 이름, 과목 이름을 띄어쓰기로 구분하여 차례로 작성해주세요.")
+    print("입력예) Mickey swift")
+    
+    let input = readLine()!.split(separator: " ").map { String($0) }
+    
+    if input.count != 2 {
+        print("입력이 잘못되었습니다. 다시 확인해주세요.")
+    } else if students[input[0]] != nil {
+        students[input[0]]?[input[1]] = nil
+        print("\(input[0]) 학생의 \(input[1]) 과목의 성적이 삭제되었습니다.")
+    } else {
+        print("\(input[0]) 학생을 찾지 못했습니다.")
     }
 }
 
