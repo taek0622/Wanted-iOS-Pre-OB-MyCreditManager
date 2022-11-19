@@ -53,7 +53,11 @@ enum Sentence {
     static func deleteScoreSuccess(input: [String]) -> String {
         return "\(input[0]) 학생의 \(input[1]) 과목의 성적이 삭제되었습니다."
     }
-    
+
+    static func showScore(input: (String, String)) -> String {
+        return "\(input.0): \(input.1)"
+    }
+
     static func showAverageSuccess(average: Double) -> String {
         return "평점: \(average)"
     }
@@ -158,7 +162,7 @@ class Main {
             var sum = 0.0
     
             students[input]?.forEach {
-                print("\($0.key): \($0.value)")
+                print(Sentence.showScore(input: $0))
 
                 sum += convertScore(score: $0.value)
             }
