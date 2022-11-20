@@ -113,7 +113,7 @@ class CreditManager {
                 sum += convertScore(score: $0.value)
             }
 
-            let average = sum / Double(students[input]!.count)
+            let average = floor(sum / Double(students[input]!.count) * 100) / 100
             print(Sentence.showAverageSuccess(average: average))
         } else {
             print(Sentence.studentNotFound(name: input))
