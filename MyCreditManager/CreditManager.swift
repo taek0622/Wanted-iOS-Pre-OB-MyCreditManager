@@ -12,13 +12,15 @@ class CreditManager {
 
     func run() {
         while true {
-            print(Sentence.run)
-
-            combiningFunction(input: readLine()!)
+            selectMenu()
         }
     }
 
-    private func combiningFunction(input: String) {
+    private func selectMenu() {
+        print(Sentence.run)
+
+        let input = readLine()!
+
         switch input {
         case "1":
             addStudent()
@@ -43,7 +45,7 @@ class CreditManager {
         let name = readLine()!
 
         if name == "" {
-            wrongInput()
+            print(Sentence.wrongInput)
         } else if students[name] != nil {
             print(Sentence.studentExist(name: name))
         } else {
@@ -71,7 +73,7 @@ class CreditManager {
         let input = readLine()!.split(separator: " ").map { String($0) }
 
         if input.count != 3 {
-            print(Sentence.wrongInputForScore)
+            print(Sentence.wrongInput)
         } else if students[input[0]] != nil {
             students[input[0]]?[input[1]] = input[2]
             print(Sentence.updateScoreSuccess(input: input))
@@ -86,7 +88,7 @@ class CreditManager {
         let input = readLine()!.split(separator: " ").map { String($0) }
 
         if input.count != 2 {
-            print(Sentence.wrongInputForScore)
+            print(Sentence.wrongInput)
         } else if students[input[0]] != nil {
             students[input[0]]?[input[1]] = nil
             print(Sentence.deleteScoreSuccess(input: input))
@@ -101,7 +103,7 @@ class CreditManager {
         let input = readLine()!
 
         if input == "" {
-            print(Sentence.wrongInputForScore)
+            print(Sentence.wrongInput)
         } else if students[input] != nil {
             var sum = 0.0
     
@@ -149,6 +151,6 @@ class CreditManager {
     }
 
     private func wrongInput() {
-        print(Sentence.wrongInput)
+        print(Sentence.wrongInputForMenu)
     }
 }
